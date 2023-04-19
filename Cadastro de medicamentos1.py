@@ -29,10 +29,11 @@ def cadastra_medicamento() :
 
 def mostrar_medicamento() :
     for medicamento in medicamentos:
-      print(f'''
-      Nome: {medicamento_nome}
-      id: {medicamento_id}
-      lote: {medicamento_lote}''')
+        medicamento_nome, medicamento_id, medicamento_lote = medicamento
+        print(f'''
+        Nome: {medicamento_nome}
+        id: {medicamento_id}
+        lote: {medicamento_lote}''')
 
 
 def programa() :
