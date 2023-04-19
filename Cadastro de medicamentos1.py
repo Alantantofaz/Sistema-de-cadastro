@@ -11,13 +11,16 @@ def menu() :
 [2] - Consultar medicamento
 [3] - Editar itens do medicamento
 [4] - Sair do programa
+
+
+
 '''))
 
     return option
 
 def cadastra_medicamento() :
     medicamento_nome = input('Digite o nome do medicamento: ')
-    medicamento_ = input('Digite o id do medicamento: ')
+    medicamento_id = input('Digite o id do medicamento: ')
     medicamento_lote = input('Digite o lote do medicamento: ')
     medicamentos_dados = (medicamento_nome,medicamento_id,medicamento_lote)
     medicamentos.append(medicamentos_dados)
@@ -27,9 +30,9 @@ def cadastra_medicamento() :
 def mostrar_medicamento() :
     for medicamento in medicamentos:
       print(f'''
-      Nome: {medicamento[0]}
-      id: {medicamento[1]}
-      lote: {medicamento[2]}''')
+      Nome: {medicamento_nome}
+      id: {medicamento_id}
+      lote: {medicamento_lote}''')
 
 
 def programa() :
