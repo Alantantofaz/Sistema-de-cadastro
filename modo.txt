@@ -1,0 +1,9 @@
+#objetivo principal é o cadastro de medicações para o estoque
+
+A entrada iinicia com menu de opções de cadastro.
+
+    nome medicação
+    tipo de medicação 
+    lote
+    validade
+    numero de ID
