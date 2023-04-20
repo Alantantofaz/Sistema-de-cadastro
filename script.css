@@ -1,0 +1,19 @@
+*
+{
+  color:red;
+  background-color:#000412;
+}
+.btn
+{
+  text-decoration:none;
+  color:yellow;
+  border:3px solid ;
+  background-color:blue;
+  border-color:blue;
+  border-radius:5px;
+  display:block;
+  width:100px;
+  padding:12px;
+  text-align:center;
+}
+
