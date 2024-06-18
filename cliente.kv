@@ -1,0 +1,88 @@
+<MenuScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Adicionar Cliente'
+            on_press: root.manager.current = 'add'
+        Button:
+            text: 'Listar Clientes'
+            on_press: root.manager.current = 'list'
+        Button:
+            text: 'Apagar Cliente'
+            on_press: root.manager.current = 'delete'
+        Button:
+            text: 'Ver Lucro'
+            on_press: root.manager.current = 'profit'
+
+<AddClienteScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: nome
+            hint_text: 'Nome'
+        TextInput:
+            id: telefone
+            hint_text: 'Telefone'
+        TextInput:
+            id: procedimento
+            hint_text: 'Procedimento'
+        TextInput:
+            id: valor_pago
+            hint_text: 'Valor Pago'
+        TextInput:
+            id: metodo_pagamento
+            hint_text: 'Método de Pagamento'
+        TextInput:
+            id: lucro
+            hint_text: 'Lucro'
+        Button:
+            text: 'Adicionar'
+            on_press: root.add_cliente(nome.text, telefone.text, procedimento.text, valor_pago.text, metodo_pagamento.text, lucro.text)
+        Button:
+            text: 'Voltar'
+            on_press: root.manager.current = 'menu'
+
+<ListClienteScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        ScrollView:
+            BoxLayout:
+                id: cliente_list
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+        Button:
+            text: 'Voltar'
+            on_press: root.manager.current = 'menu'
+
+<DeleteClienteScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: cliente_id
+            hint_text: 'ID do Cliente'
+        Button:
+            text: 'Apagar'
+            on_press: root.delete_cliente(cliente_id.text)
+        Button:
+            text: 'Voltar'
+            on_press: root.manager.current = 'menu'
+
+<ProfitScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        TextInput:
+            id: data_inicio
+            hint_text: 'Data Início (AAAA-MM-DD)'
+        TextInput:
+            id: data_fim
+            hint_text: 'Data Fim (AAAA-MM-DD)'
+        Button:
+            text: 'Calcular Lucro'
+            on_press: root.calculate_lucro(data_inicio.text, data_fim.text)
+        Label:
+            id: lucro_result
+            text: 'Lucro: R$ 0.00'
+        Button:
+            text: 'Voltar'
+            on_press: root.manager.current = 'menu'
